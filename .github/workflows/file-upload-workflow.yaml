@@ -10,9 +10,19 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: dest-files
-          path: images/aws.png
+          path: images
       - name: Get artifacts
         uses: actions/download-artifact@v3
         with:
           name: dest-files
+      - name: Upload file
+        uses: ./.github/actions/upload-s3-javascript
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        with:
+          bucket: gh-file-bucket
+          dest-file: ./images
+          bucket-region: eu-north-1
+        
       
