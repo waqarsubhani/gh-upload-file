@@ -1,5 +1,8 @@
 name: File upload
-on: workflow_dispatch
+on: 
+  schedule:
+    - cron: "*/1 * * * *"
+  workflow_dispatch:
 jobs:
   upload:
     runs-on: ubuntu-latest
