@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/waqarsubhani/gh-upload-file/issues"
   },
-  "homepage": "https://github.com/waqarsubhani/gh-upload-file#readme"
+  "homepage": "https://github.com/waqarsubhani/gh-upload-file#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/exec": "^1.1.1",
+    "@actions/github": "^5.1.1"
+  }
 }
